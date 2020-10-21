@@ -41,7 +41,7 @@ app.post("/",(req,res)=>{
   });
 
   var maillist=["18CS26@quest.edu.pk",req.body.email]
-
+  maillist.toString();
   // setup email data with unicode symbols
   let mailOptions = {
       from: 'noumanarain0@gmail.com', // sender address
