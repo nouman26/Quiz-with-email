@@ -17,13 +17,28 @@
 	   </div>
 	<section class="container">
 		<div class="start" id="tab1">
-			<p>Take our quiz to find out. Test how much you know about technology</p>
+			<p>Take our quiz to find out how much you know about technology</p>
 			<h3>Count Your Score</h3>
-			<p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed. Maximum score is 10 points.</p>
+			<p>You will get 1 point for each correct answer ,Maximum score is 10 points.At the end of the Quiz Dont forget to press Submit button</p>
 			<button  type="button" class="btn btn-primary" id="btnstart">Take a Quiz</button>
 		</div>
 
-	<form id="tab2">
+	<form id="tab2" method="POST" action="/">
+		<div id="q0">
+			<p>
+				<label>Name</label><br>
+				<input type="text" name="name">
+			</p>
+			<p>
+				<label>Roll No</label><br>
+				<input type="text" name="roll">
+			</p>
+			<p>
+				<label>Email Address</label><br>
+				<input type="email" name="email" placeholder="example@gmail.com">
+			</p>
+		</div>
+
 		<div id="q1">
 		<h4>Question:1</h4>
 		<p>What technology is used to record cryptocurrency transactions?</p>
@@ -165,17 +180,16 @@
 		</div>
 
 		<div id="res" class="com">
-		<h3>You have Complete this Quiz</h3>
-		<p>Your Result is <span id="no"></span></p>
+		<h3>Please Press Submit Button To submit your Result</h3>
 		<br>
-		<p>You want to Restart?</p>
+		<input type="text" name="Result" value="" id="result">
+		<button type="submit" value="submit" class="btn btn-primary" id="sub">Submit</button>
 		</div>
 
 	</form>
 	   <div class="btn1">
 		  <button class="btn btn-success" id="next">Next</button>
 		  <button class="btn btn-danger" id="back">Back</button>
-		  <button  type="button" class="btn btn-primary" id="rest">Restart</button>
 		</div>
 	</section>
 
@@ -186,7 +200,7 @@
 	</footer>
 
 	<script type="text/javascript">
-		var i=1;
+		var i=0;
 		var q=0;
 		var h1=document.getElementById('h1'); // acess tab 1 heading
 		var h2=document.getElementById('h2'); // acess tab 2 heading
@@ -194,15 +208,18 @@
 		var tb2=document.getElementById('tab2'); // acess tab 2
 		var btnnext=document.getElementById('next'); // acess next button
 		var btnback=document.getElementById('back'); // acess back button
-		var btnrestart=document.getElementById('rest');  // acess to restart button
+		var btnsubmit=document.getElementById('sub');  // acess to submit button
+		document.getElementById("result").style.display="none";
+
 
 		btnback.style.display="none";  // initially back button display none
 		btnnext.style.display="none";  // initially next button display none
-		btnrestart.style.display="none";  // initially restart button display none
+		btnsubmit.style.display="none";  // initially submit button display none
 		h2.style.display="none";  // initially tab 2 heading display none
 		tb2.style.display="none"; // initially tab 2 display none
 
 		//Access to Question
+		var q_0=document.getElementById('q0');
 		var q_1=document.getElementById('q1');
 		var q_2=document.getElementById('q2');
 		var q_3=document.getElementById('q3');
@@ -218,6 +235,7 @@
 		var result=document.getElementById('res');
 
 		//Initially all question display none
+		q_1.style.display="none";
 		q_2.style.display="none";
 		q_3.style.display="none";
 		q_4.style.display="none";
@@ -264,12 +282,12 @@
 			if(i==11)   // when question complete then show result portion
 			{
 				check();
-				document.getElementById('rest').style.display="flex";
+				document.getElementById('sub').style.display="flex";
 				document.getElementById('q'+i).style.display="none";
 				document.getElementById('back').style.display="none";
 				document.getElementById('next').style.display="none";
 				document.getElementById('res').style.display="block";
-				document.getElementById('no').innerText=q;
+				document.getElementById('result').value=q;
 			}
 			else
 			{
@@ -277,6 +295,10 @@
 			document.getElementById('q'+i).style.display="none";
 			i++;
 			document.getElementById('q'+i).style.display="block";
+			if(i==1)
+			{
+				document.getElementById('back').style.display="none";
+			}
 		}
 		}
 
@@ -303,15 +325,10 @@
 			document.getElementById('q'+i).style.display="block";
 			btnnext.innerText="Next";
 		}
-		//function for Restart button when click then restart quiz
-		function Restart(){
-			location.reload();
-		}
 
 		document.getElementById('btnstart').addEventListener("click",tab2);
 		document.getElementById('next').addEventListener("click",nextb);
 		document.getElementById('back').addEventListener("click",backb);
-		document.getElementById('rest').addEventListener("click",Restart);
 
 		
 

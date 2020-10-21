@@ -5,6 +5,22 @@ p{
 	font-size: 20px;
 	font-weight: bold;
 }
+#q0 p{
+	font-weight: unset;
+}
+#q0{
+	text-align: center;	
+}
+
+#q0 input{
+	border-radius: 10px;
+	width: 50%;
+	text-align: center;
+	border-color: white;
+}
+#q0 input:hover{
+	border-color: white;
+}
 h4{
 	text-decoration: underline;
 }
@@ -34,7 +50,7 @@ section{
 	display: flex !important;
 	margin: auto;
 }
-#rest{
+#sub{
 	margin: auto;
 }
 /*-------------End of 1st tab-----------------*/
@@ -64,6 +80,10 @@ p{
 	font-size: 17px;
 	font-weight: bold;
 }
+#q0 input{
+	width: 80%;
+	font-size: 10px !important;
+}
 .head h2{
 	font-size: 22px!important;
 }
@@ -73,6 +93,10 @@ h3{
 }
 
 @media screen and (max-width: 771px){
+	#q0 input{
+		width: 60%;
+		font-size: 15px !important;
+	}
 			.lin{				/* class for copyright lines*/
 			    text-align: center;
 			    padding: 10px;
