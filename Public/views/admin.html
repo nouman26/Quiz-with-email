@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<title>QUIZ</title>
+</head>
+<body>
+	<header>
+        <h2>Question</h2>
+    </header>
+    <script>
+        for(var i=0;i<3;i++){
+            var qT="Question # "+i;
+            var div=document.createElement("div");
+            var h2_txt=document.createTextNode(qT);
+            var h2=document.createElement("h2").appendChild(h2_txt);
+            var q=document.createElement("input");
+            var o1=document.createElement("input");
+            var o2=document.createElement("input");
+            var o3=document.createElement("input");
+            var o4=document.createElement("input");
+            var br=document.createElement("br");
+
+            div.appendChild(h2);
+            div.appendChild(q);
+            div.appendChild(o1);
+            div.appendChild(o2);
+            div.appendChild(o3);
+            div.appendChild(o4);
+
+            document.getElementsByTagName("header")[0].appendChild(div);
+            document.getElementsByTagName("header")[0].appendChild(br);
+        }
+    </script>
