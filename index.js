@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/",(req,res)=>{
-    us="18CS26@quest.edu.pk",req.body.email;
+    us=["18CS26@quest.edu.pk",req.body.email]
     const output = `
     <h3>Contact Details</h3>
     <ul>  
