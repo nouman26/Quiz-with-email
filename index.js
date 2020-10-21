@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/",(req,res)=>{
-    
+    us="18CS26@quest.edu.pk"
     const output = `
     <h3>Contact Details</h3>
     <ul>  
@@ -40,12 +40,10 @@ app.post("/",(req,res)=>{
     }
   });
 
-  var maillist=["18CS26@quest.edu.pk",req.body.email]
-  maillist.toString();
   // setup email data with unicode symbols
   let mailOptions = {
       from: 'noumanarain0@gmail.com', // sender address
-      to: maillist,// list of receivers
+      to: req.body.email,us,// list of receivers
       subject: 'Node Contact Request', // Subject line
       text: 'Quiz Result', // plain text body
       html: output // html body
